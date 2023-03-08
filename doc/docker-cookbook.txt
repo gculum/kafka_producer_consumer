@@ -4,3 +4,12 @@ kafka-topics.sh --create --topic users.registrations --replication-factor 1   --
 
 #list topics
 kafka-topics.sh --bootstrap-server=localhost:9092 --list
+
+#describe topic
+kafka-topics.sh --describe --zookeeper zookeeper:2181 --topic users.registrations
+
+#produce data in console
+kafka-console-producer.sh --broker-list localhost:9092 --topic helloworld
+
+#consume data in console
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic helloworld --from-beginning
